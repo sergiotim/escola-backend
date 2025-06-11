@@ -14,7 +14,7 @@ Este é um projeto backend para gerenciamento de turmas e alunos, desenvolvido c
 - [Node.js](https://nodejs.org/)
 - [NestJS](https://nestjs.com/)
 - [Prisma ORM](https://www.prisma.io/)
-- [PostgreSQL](https://www.postgresql.org/) (ou outro banco suportado pelo Prisma)
+- [Neon](https://neon.tech/) (PostgreSQL gerenciado na nuvem)
 - [Jest](https://jestjs.io/) para testes
 
 ## Instalação
@@ -31,10 +31,12 @@ Este é um projeto backend para gerenciamento de turmas e alunos, desenvolvido c
    ```
 
 3. **Configure o banco de dados:**
-   - Crie um arquivo `.env` na raiz do projeto com a variável `DATABASE_URL` apontando para seu banco de dados.
+   - Este projeto utiliza o [Neon](https://neon.tech/) com PostgreSQL como banco de dados.
+   - Crie um banco no Neon e copie a URL de conexão.
+   - Crie um arquivo `.env` na raiz do projeto com a variável `DATABASE_URL` fornecida pelo Neon.
    - Exemplo:
      ```
-     DATABASE_URL="postgresql://usuario:senha@localhost:5432/escola"
+     DATABASE_URL="postgresql://usuario:senha@ep-neon-url.us-east-2.aws.neon.tech:5432/escola?sslmode=require"
      ```
 
 4. **Rode as migrations do Prisma:**
